@@ -1,3 +1,353 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #734b5e;
+}
+
 body {
-    background-color: blueviolet;
+    font-family: 'Lato', sans-serif;
+    font-size: 62.5%;
+    background-color: var(--palet-body-gris1);
+}
+
+:root {
+    --palet-body-morado: #734b5e;
+    --palet-body-clarito: #faece7;
+    --palet-body-gris1: #e8e2e2;
+    --palet-body-gris2: #8a8d91;
+    --palet-body-gris3: #565857;
+    --palet-body-black: rgb(22, 19, 19);
+
+    --palet-categories-yellow: #f9c60e81;
+    --palet-categories-orange: #f8672460;
+    --palet-categories-red: #ea354774;
+    --palet-categories-violet: #662e9b5e;
+    --palet-categories-blue: #43bdcd78;
+
+    --text-small: 1rem;
+    --text-mediun: 1.2rem;
+    --text-bold: 1.8rem;
+}
+
+h1 {
+    font-size: var(--text-bold);
+    color: var(--palet-body-black);
+    padding-top: 10px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+h2 {
+    padding: 20px;
+}
+
+input {
+    background-color: var(--palet-body-clarito);
+    border: none;
+    font-size: var(--text-small);
+    border-radius: 5px;
+    padding: 0 16px;
+}
+
+input::placeholder {
+    color: var(--palet-body-morado);
+}
+
+button {
+    background-color: var(--palet-body-clarito);
+    color: var(--palet-body-morado);
+    font-weight: bold;
+    font-size: var(--text-mediun);
+    padding: 3px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.movie-container {
+    cursor: pointer;
+}
+.movie-img {
+    border-radius: 8px;
+}
+
+.categoriesPreview-list, .categories-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.header-container {
+    padding-top: 30px;
+    background-color: var(--palet-body-morado);
+}
+
+.header-container--long {
+    background-image: url('https://pics.filmaffinity.com/Deadpool-777527803-large.jpg');
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.35) 19.27%, rgba(0, 0, 0, 0) 29.17%), url(https://pics.filmaffinity.com/Deadpool-777527803-large.jpg);
+    background-size: cover !important;
+    height: 480px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.header-container--categoryView {
+    background: linear-gradient(180deg, rgba(238, 204, 117, 0.5) 0%, rgba(238, 204, 117, 0) 72.92%);
+}
+
+.header-title {
+    margin-bottom: 16px;
+    color: var(--palet-body-clarito);
+}
+
+.header-arrow {
+    font-weight: var(--text-bold);
+    font-size: 36px;
+    margin-bottom: 16px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.header-arrow--white {
+    color: var(--palet-body-clarito);
+}
+
+.header-searchForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+.header-searchForm input {
+    height: 48px;
+    width: 100%;
+    border-radius: 25px;
+}
+
+.header-searchForm button {
+    width: 56px;
+    height: 48px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+
+
+  /* Trending */
+.trendingPreview-header, .trendingPreviewSeries-header {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.trendingPreview-btn, .trendingPreviewSeries-btn {
+    border-radius: 40px;
+    height: auto;
+    width: auto;
+    padding: 5px;
+    font-size: 0.8rem;
+    border: solid var(--palet-body-gris3) 2px;
+    background-color: var(--palet-body-gris1);
+    color: var(--palet-body-gris3);
+    margin-right: 50px;
+}
+
+.trendingPreview-movieList, .trendingPreview-serieList{
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    height: 241px;
+    padding-left: 24px;
+    padding-bottom: 16px;
+    margin-top: 15px;
+}
+
+.trendingPreview-movieList .movie-container, .trendingPreview-serieList .movie-container {
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.trendingPreview-movieList .movie-container .movie-img, .trendingPreview-serieList .movie-container .movie-img{
+    height: 225px;
+    min-height: 225px;
+    max-height: 225px;
+    width: 150px;
+    min-width: 150px;
+    max-width: 150px;
+}
+
+
+  /* Categories */
+
+.categoriesPreview-list {
+    width: 100%;
+    height: auto;
+    margin: 10px auto;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    padding-left: 20px;
+    align-items: center;
+    
+}
+
+
+.category-container {
+    width: auto;
+    padding-right: 5px;
+}
+
+.category-title {
+    margin-bottom: 8px;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.category-title::before {
+    content: '••••';
+    color: transparent;
+    /* TODO: cambiar color por ID de la categoría */
+    background-color: var(--idColor);
+    border-radius: 8px;
+    margin-right: 8px;
+    width: 8px;
+    height: 8px;
+}
+
+#id28 { --idColor: var(--palet-categories-yellow); }
+#id12 { --idColor: var(--palet-categories-red); }
+#id16 { --idColor: var(--palet-categories-violet); }
+#id35 { --idColor: var(--palet-categories-blue); }
+#id80 { --idColor: var(--palet-body-gris3); }
+#id99 { --idColor: var(--palet-categories-orange); }
+#id18 { --idColor: var(--palet-body-morado); }
+#id10751 { --idColor: var(--palet-categories-yellow); }
+#id14 { --idColor: var(--palet-categories-red); }
+#id36 { --idColor: var(--palet-categories-violet); }
+#id27 { --idColor: var(--palet-categories-blue); }
+#id10402 { --idColor: var(--palet-body-gris3); }
+#id9648 { --idColor: var(--palet-categories-orange); }
+#id10749 { --idColor: var(--palet-body-morado); }
+#id878 { --idColor: var(--palet-categories-yellow); }
+#id10770 { --idColor: var(--palet-categories-red); }
+#id53 { --idColor: var(--palet-categories-violet); }
+#id10752 { --idColor: var(--palet-categories-blue); }
+#id37 { --idColor: var(--palet-body-gris3); }
+
+
+  /* Generic List (search, trending & category) */
+.genericList-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 32px 24px;
+}
+
+.genericList-container .movie-container {
+    display: inline-block;
+    width: 47.5%;
+}
+
+.genericList-container .movie-img {
+    width: 100%;
+}
+
+
+  /* Movie Detail */
+.movieDetail-container {
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    padding: 32px 24px;
+    margin-top: 403px;
+    z-index: 1;
+    position: absolute;
+    background-color: var(--palet-body-gris2);
+}
+
+.movieDetail-title {
+    display: inline-block;
+    width: 80%;
+    margin: 0 0 16px 0;
+    padding: 0;
+}
+
+.movieDetail-score {
+    display: inline-block;
+    text-align: right;
+    width: 18%;
+    font-weight: var(--text-bold);
+}
+.movieDetail-score::before {
+    content: '★';
+    color: var(--palet-categories-yellow);
+    padding-right: 4px;
+}
+
+.movieDetail-description {
+    margin: 0 0 24px 0;
+}
+
+.relatedMovies-container {
+    margin-top: 24px;
+    height: 216px;
+}
+
+.relatedMovies-title {
+    margin-bottom: 16px;
+}
+
+.relatedMovies-scrollContainer {
+    position: absolute;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    width: calc(100vw - 24px);
+    padding-bottom: 16px;
+}
+
+.relatedMovies-scrollContainer .movie-container {
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.relatedMovies-scrollContainer .movie-img {
+    width: 125px;
+    min-width: 125px;
+    max-width: 125px;
+    height: 187.5px;
+    min-height: 187.5px;
+    max-height: 187.5px;
+}
+
+
+  /* Footer */
+footer {
+    background-color: var(--palet-body-morado);
+    color: var(--palet-body-gris1);
+    text-align: center;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inactive {
+    display: none;
 }
