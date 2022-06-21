@@ -18,7 +18,7 @@
 
         <form id="searchForm" class="header-searchForm">
             <input type="text" placeholder="V de venganza">
-            <button>🔍</button>
+            <button id="searchBtn">🔍</button>
         </form>
     </header>
 
@@ -46,43 +46,44 @@
       </article>
   </section>
 
-    <section id="categoriesPreview" class="categoriesPreview-container">
-        <h2 class="categoriesPreview-title">Categorías</h2>
+  <section id="genericList" class="genericList-container inactive">
+    <!-- <div class="movie-container">
+      <img
+        src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
+        class="movie-img"
+        alt="Nombre de la película"
+      />
+    </div>
+
+    <div class="movie-container">
+      <img
+        src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
+        class="movie-img"
+        alt="Nombre de la película"
+      />
+    </div>
+
+    <div class="movie-container">
+      <img
+        src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
+        class="movie-img"
+        alt="Nombre de la película"
+      />
+    </div> -->
+  </section>
+
+  <section id="categoriesPreview" class="categoriesPreview-container">
+      <h2 class="categoriesPreview-title">Categorías de Películas</h2>
     
-        <article class="categoriesPreview-list">
+      <article class="categoriesPreview-list">
           <!-- <div class="category-container">
             <h3 id="id28" class="category-title">Romance</h3>
           </div> -->
-        </article>
-      </section>
+      </article>
     
-      <section id="genericList" class="genericList-container inactive">
-        <div class="movie-container">
-          <img
-            src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
-            class="movie-img"
-            alt="Nombre de la película"
-          />
-        </div>
+    </section>
     
-        <div class="movie-container">
-          <img
-            src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
-            class="movie-img"
-            alt="Nombre de la película"
-          />
-        </div>
-    
-        <div class="movie-container">
-          <img
-            src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
-            class="movie-img"
-            alt="Nombre de la película"
-          />
-        </div>
-      </section>
-    
-      <section id="movieDetail" class="movieDetail-container inactive">
+    <section id="movieDetail" class="movieDetail-container inactive">
         <h1 class="movieDetail-title">Deadpool</h1>
         <span class="movieDetail-score">7.6</span>
         <p class="movieDetail-description">
@@ -132,15 +133,17 @@
             </div>
           </div>
         </article>
-      </section>
+    </section>
     
-      <footer>Realizado en curso de Platzi por @juandc</footer>
+    <footer>Realizado en curso de Platzi por @juandc</footer>
     
     
-      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <script src="./src/secret.js"></script>
+    <script src="./src/nodes.js"></script>
     <script src="./src/main.js"></script>
+    <script src="./src/navigation.js"></script>
     
 </body>
 </html>
